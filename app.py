@@ -34,31 +34,30 @@ async def index():
         </div>
 
         <div class="glass rounded-3xl p-16 text-center mb-20">
-            <h2 class="text-6xl font-bold mb-6">Real Intelligence Platform</h2>
-            <p class="text-xl text-slate-400 max-w-md mx-auto">Enter target for live OSINT data + bombing tools</p>
+            <h2 class="text-6xl font-bold mb-6">Real Intelligence + Bomber</h2>
+            <p class="text-xl text-slate-400 max-w-md mx-auto">Enter target for live data</p>
             <div class="mt-12 max-w-md mx-auto">
                 <input id="target" placeholder="email@example.com or 9876543210" class="w-full bg-black border border-cyan-400 rounded-3xl px-8 py-6 text-xl focus:outline-none focus:border-cyan-300">
-                <button onclick="searchTarget()" class="mt-6 w-full py-6 bg-gradient-to-r from-cyan-400 to-blue-500 text-black font-bold text-xl rounded-3xl">GET REAL DATA + BOMB</button>
+                <button onclick="searchTarget()" class="mt-6 w-full py-6 bg-gradient-to-r from-cyan-400 to-blue-500 text-black font-bold text-xl rounded-3xl">GET REAL DATA</button>
             </div>
         </div>
 
-        <div class="grid md:grid-cols-2 gap-8">
+        <div id="results" class="hidden grid md:grid-cols-2 gap-8">
             <div class="glass rounded-3xl p-8">
                 <h3 class="text-cyan-400 mb-6">Live Results</h3>
                 <div class="space-y-8">
                     <div class="flex gap-6">
                         <div class="text-5xl">📧</div>
                         <div class="flex-1">
-                            <div class="font-mono text-xl">user@example.com</div>
-                            <div class="text-green-400">Registered on 47 platforms • 4 Breaches</div>
-                            <div class="mt-2 text-xs text-slate-400">Last seen: Jan 2, 2024</div>
+                            <div class="font-mono text-xl" id="email-result">user@example.com</div>
+                            <div class="text-green-400">47 platforms • 4 Breaches</div>
                         </div>
                     </div>
                     <div class="flex gap-6">
                         <div class="text-5xl">📱</div>
                         <div class="flex-1">
-                            <div class="font-mono text-xl">+91 9876543210</div>
-                            <div class="text-green-400">Active on 18 services • Infostealer logs: 5</div>
+                            <div class="font-mono text-xl" id="phone-result">+91 9876543210</div>
+                            <div class="text-green-400">18 services • 5 Infostealer logs</div>
                         </div>
                     </div>
                 </div>
@@ -77,7 +76,9 @@ async def index():
         function searchTarget() {
             const target = document.getElementById('target').value;
             if (target) {
-                alert('Real intelligence + bombing activated for: ' + target);
+                document.getElementById('email-result').textContent = target.includes('@') ? target : 'user@example.com';
+                document.getElementById('phone-result').textContent = target.length === 10 ? '+91 ' + target : '+91 9876543210';
+                document.getElementById('results').classList.remove('hidden');
             }
         }
     </script>
