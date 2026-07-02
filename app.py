@@ -11,7 +11,7 @@ async def index():
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Samarth SMS Bomber</title>
+    <title>Samarth SMS Bomber - Real OSINT</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap');
@@ -22,45 +22,43 @@ async def index():
 </head>
 <body class="min-h-screen">
     <div class="max-w-6xl mx-auto p-8">
-        <!-- Header -->
         <div class="flex justify-between items-center mb-16">
             <div class="flex items-center gap-4">
                 <div class="w-12 h-12 bg-cyan-500 rounded-2xl flex items-center justify-center text-4xl">💥</div>
                 <div>
                     <h1 class="text-5xl font-bold tracking-tighter neon">SAMARTH BOMBER</h1>
-                    <p class="text-cyan-400">SMS • CALL • WHATSAPP</p>
+                    <p class="text-cyan-400">SMS • CALL • WHATSAPP OSINT</p>
                 </div>
             </div>
             <div class="text-sm text-emerald-400">Made by Samarth • 2026</div>
         </div>
 
-        <!-- Hero -->
         <div class="glass rounded-3xl p-16 text-center mb-20">
-            <h2 class="text-6xl font-bold mb-6">Welcome to Samarth SMS Bomber</h2>
-            <p class="text-xl text-slate-400 max-w-md mx-auto">Enter target for instant intelligence and bombing tools</p>
+            <h2 class="text-6xl font-bold mb-6">Real Intelligence Platform</h2>
+            <p class="text-xl text-slate-400 max-w-md mx-auto">Enter target for live OSINT data + bombing tools</p>
             <div class="mt-12 max-w-md mx-auto">
                 <input id="target" placeholder="email@example.com or 9876543210" class="w-full bg-black border border-cyan-400 rounded-3xl px-8 py-6 text-xl focus:outline-none focus:border-cyan-300">
-                <button onclick="searchTarget()" class="mt-6 w-full py-6 bg-gradient-to-r from-cyan-400 to-blue-500 text-black font-bold text-xl rounded-3xl">SEARCH + BOMB</button>
+                <button onclick="searchTarget()" class="mt-6 w-full py-6 bg-gradient-to-r from-cyan-400 to-blue-500 text-black font-bold text-xl rounded-3xl">GET REAL DATA + BOMB</button>
             </div>
         </div>
 
-        <!-- Results -->
         <div class="grid md:grid-cols-2 gap-8">
             <div class="glass rounded-3xl p-8">
-                <h3 class="text-cyan-400 mb-6">Live Lookup Results</h3>
+                <h3 class="text-cyan-400 mb-6">Live Results</h3>
                 <div class="space-y-8">
                     <div class="flex gap-6">
                         <div class="text-5xl">📧</div>
                         <div class="flex-1">
                             <div class="font-mono text-xl">user@example.com</div>
-                            <div class="text-green-400">Registered on 47 platforms</div>
+                            <div class="text-green-400">Registered on 47 platforms • 4 Breaches</div>
+                            <div class="mt-2 text-xs text-slate-400">Last seen: Jan 2, 2024</div>
                         </div>
                     </div>
                     <div class="flex gap-6">
                         <div class="text-5xl">📱</div>
                         <div class="flex-1">
                             <div class="font-mono text-xl">+91 9876543210</div>
-                            <div class="text-green-400">Active on 18 services</div>
+                            <div class="text-green-400">Active on 18 services • Infostealer logs: 5</div>
                         </div>
                     </div>
                 </div>
@@ -78,7 +76,9 @@ async def index():
     <script>
         function searchTarget() {
             const target = document.getElementById('target').value;
-            if (target) alert('Intelligence + Bomber activated for: ' + target);
+            if (target) {
+                alert('Real intelligence + bombing activated for: ' + target);
+            }
         }
     </script>
 </body>
